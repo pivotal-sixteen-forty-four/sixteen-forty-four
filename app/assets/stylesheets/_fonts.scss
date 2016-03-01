@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300|Roboto:400,300,100,500,700);
+
+@mixin ubuntu-light {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+}
+
+@mixin roboto-thin {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+@mixin roboto-light {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+@mixin roboto-normal {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+@mixin roboto-medium {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+@mixin roboto-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}

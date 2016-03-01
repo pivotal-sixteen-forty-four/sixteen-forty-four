@@ -1,0 +1,28 @@
+@import 'colors';
+
+.brand {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.brand--event {
+  background-color: lime;
+}
+
+.brand-logo {
+  flex: 0 0 auto;
+
+  margin-top: auto;
+}
+
+.brand-location {
+  flex: 0 0 auto;
+  font-size: 36px;
+  margin-bottom: 42px;
+  margin-top: auto;
+  //width: 75%;
+}
