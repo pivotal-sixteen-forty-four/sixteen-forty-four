@@ -1,0 +1,53 @@
+@import 'fonts';
+@import 'colors';
+
+.instructions {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  padding: 45px 42px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.instructions-brand {
+  @include roboto-normal;
+  font-size: 36px;
+  color: $greyish-brown;
+}
+
+.instructions-text {
+  @include roboto-thin;
+  font-size: 26px;
+  line-height: 1.4;
+  color: $greyish-brown;
+  margin-top: 27px;
+}
+
+.instructions-image {
+  flex: 1 1 auto;
+}
+
+.instructions-more {
+  @include roboto-bold;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  color: $greyish-brown;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+.instructions-more::after {
+  @include roboto-bold;
+  font-size: 16px;
+  background-color: $greyish-brown;
+  color: $white;
+  content: 'i';
+  border-radius: 15px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-transform: lowercase;
+  vertical-align: bottom;
+}
