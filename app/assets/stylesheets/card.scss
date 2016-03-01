@@ -27,7 +27,8 @@
 }
 
 .card-hero--event {
-  background-image: linear-gradient(to bottom, $transparent, $transparent-black);
+  background-image: linear-gradient(to bottom, $transparent, $transparent-black), image-url('16th_century.jpg');
+  background-size: 100%;
 }
 
 .card-body {
