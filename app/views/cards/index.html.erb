@@ -1,126 +1,69 @@
 <div class="page">
 
+  <%- # noinspection RailsI18nInspection
+      I18n.t('companies').each do |company, details| -%>
+      <div class="card">
+        <div class="front">
+          <div class="front-hero front-hero--<%= company %>">
+            <div class="brand">
+              <%= image_tag "#{company}_front.svg", alt: details[:title], class: 'brand-logo' %>
+              <div class="brand-location">
+                <div class="location">
+              <span class="location-floor">
+                <%= details[:floor] %>
+              </span>
+              <span class="location-suite">
+                <%= details[:suite] %>
+              </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="front-body">
+            <div class="instructions">
+              <div class="instructions-brand">
+                <%= details[:title] %>
+              </div>
+              <div class="instructions-text">
+                <%= details[:instructions] %>
+              </div>
+              <%= image_tag "#{company}_directions.svg", class: 'instructions-image' %>
+              <div class="instructions-more">
+                More Info
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-back">
+      </div>
+  <% end %>
+
   <div class="card">
-    <div class="card-hero card-hero--knoll">
-      <div class="brand">
-        <%= image_tag 'knoll_front.svg', alt: 'Knoll', class: 'brand-logo' %>
-        <div class="brand-location">
-          <div class="location">
-            <span class="location-floor">
-              FL 1
-            </span>
+    <div class="card-front">
+      <div class="front">
+        <div class="front-hero front-hero--event">
+          <div class="brand">
+            <div class="brand-location">
+              <div class="location">
             <span class="location-suite">
-              Suite 100
+              <%= I18n.t('building.welcome') %>
             </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="front-body">
+          <div class="instructions">
+            <div class="instructions-brand">
+              <%= I18n.t('building.name') %>
+            </div>
+            <div class="instructions-text">
+              <%= I18n.t('building.description') %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="card-body">
-      <div class="instructions">
-        <div class="instructions-brand">
-          Knoll
-        </div>
-        <div class="instructions-text">
-          Proceed around the corner and through the doors
-        </div>
-        <%= image_tag 'knoll_directions.svg', class: 'instructions-image' %>
-        <div class="instructions-more">
-          More Info
-        </div>
-      </div>
-    </div>
   </div>
-
-  <div class="card">
-    <div class="card-hero card-hero--pivotal">
-      <div class="brand">
-        <%= image_tag 'pivotal_front.svg', alt: 'Pivotal', class: 'brand-logo' %>
-        <div class="brand-location">
-          <div class="location">
-            <span class="location-floor">
-              FL 2
-            </span>
-            <span class="location-suite">
-              Suite 200
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="instructions">
-        <div class="instructions-brand">
-          Pivotal
-        </div>
-        <div class="instructions-text">
-          Use the video phone to the left of the elevator
-        </div>
-        <%= image_tag 'pivotal_directions.svg', class: 'instructions-image' %>
-        <div class="instructions-more">
-          More Info
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-hero card-hero--galvanize">
-      <div class="brand">
-        <%= image_tag 'galvanize_front.svg', alt: 'Galvanize', class: 'brand-logo' %>
-        <div class="brand-location">
-          <div class="location">
-            <span class="location-floor">
-              FL 4
-            </span>
-            <span class="location-suite">
-              Suite 300/400
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="instructions">
-        <div class="instructions-brand">
-          Galvanize
-        </div>
-        <div class="instructions-text">
-          Call 867-5309 to gain elevator access
-        </div>
-        <%= image_tag 'galvanize_directions.svg', class: 'instructions-image' %>
-        <div class="instructions-more">
-          More Info
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-hero card-hero--event">
-      <div class="brand">
-        <div class="brand-location">
-          <div class="location">
-            <span class="location-suite">
-              Welcome
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="instructions">
-        <div class="instructions-brand">
-          Nichols Building
-        </div>
-        <div class="instructions-text">
-          The 16th century office
-        </div>
-        <div class="instructions-more">
-          More Info
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>

@@ -20,4 +20,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  companies:
+    knoll:
+      title: Knoll
+      floor: FL 1
+      suite: Suite 100
+      instructions: Go around the corner
+    pivotal:
+      title: Pivotal
+      floor: FL 2
+      suite: Suite 200
+      instructions: Use the video phone
+    galvanize:
+      title: Galvanize
+      floor: FL 4
+      suite: Suite 300/400
+      instructions: Call for help
+  more-info: More Info
+  building:
+    welcome: "Welcome"
+    name: "Nichols Building"
+    description: "The 16th century office"
