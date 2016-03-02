@@ -1,0 +1,26 @@
+@import 'colors';
+@import 'fonts';
+
+.contact {
+  font-size: 20px;
+  line-height: 36px;
+  display: flex;
+  flex-flow: row nowrap;
+  @include roboto-light;
+}
+
+.contact-title {
+  flex: 0 0 auto;
+}
+
+.contact-fill {
+  flex: 1 1 auto;
+  border-bottom: 2px dotted $white;
+  height: 23px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.contact-name {
+  flex: 0 0 auto;
+}

@@ -1,42 +1,55 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   companies:
     knoll:
       title: Knoll
       floor: FL 1
       suite: Suite 100
-      instructions: Go around the corner
+      instructions: Proceed around the corner and through the doors
+      phone: 303-555-KNOLL
+      website: knoll.com
+      org_units:
+        knoll:
+          name: Knoll
+          contacts:
+            susan:
+              name: Susan Example
+              title: Lorem Ipsum
     pivotal:
       title: Pivotal
       floor: FL 2
       suite: Suite 200
-      instructions: Use the video phone
+      instructions: Use the video phone to the left of the elevator
+      phone: 303-555-PIVOTAL
+      website: pivotal.io
+      org_units:
+        labs:
+          name: Pivotal Labs
+          contacts:
+            brian:
+              name: Brian Rose
+              title: Office Director
+        tracker:
+          name: Pivotal Tracker
+          contacts:
+            mark:
+              name: Mark Michael
+              title: Engineering Manager
     galvanize:
       title: Galvanize
       floor: FL 4
       suite: Suite 300/400
-      instructions: Call for help
+      instructions: Call 303-555-1212 to gain elevator access
+      phone: 303-555-GALVANIZE
+      website: galvanize.com
+      org_units:
+        galvanize:
+          name: Galvanize
+          contacts:
+            jeff:
+              name: Jeff Dean
+              title: Lorem Ipsum
   more-info: More Info
+  return: Return
   building:
     welcome: Welcome
     name: Nichols Building

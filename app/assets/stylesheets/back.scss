@@ -1,0 +1,62 @@
+@import 'colors';
+@import 'fonts';
+
+.back {
+  height: 1000px;
+  border-radius: 6px;
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.back--knoll {
+  background: $knoll-red;
+}
+
+.back--pivotal {
+  background: $pivotal-teal;
+}
+
+.back--galvanize {
+  background: $galvanize-orange;
+}
+
+.back-logo {
+  flex: 0 0 auto;
+  margin-top: 80px;
+  height: 75px;
+}
+
+.back-phone {
+  @include roboto-thin;
+  font-size: 28px;
+  line-height: 36px;
+  flex: 0 0 auto;
+  margin-top: 40px;
+}
+
+.back-website {
+  @include roboto-thin;
+  font-size: 28px;
+  line-height: 36px;
+  flex: 0 0 auto;
+}
+
+.back-location {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  flex: 0 0 auto;
+}
+
+.back-units {
+}
+
+.back-return {
+  margin-top: auto;
+  margin-bottom: 42px;
+  @include roboto-bold;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}

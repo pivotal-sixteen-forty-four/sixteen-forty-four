@@ -6,9 +6,11 @@
 
 .location-floor {
   @include roboto-medium;
+  font-size: 36px;
   margin-right: 28px;
 }
 
 .location-suite {
   @include roboto-thin;
+  font-size: 36px;
 }

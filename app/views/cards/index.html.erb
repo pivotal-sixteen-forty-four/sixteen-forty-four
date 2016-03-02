@@ -1,41 +1,87 @@
 <div class="page">
 
   <%- # noinspection RailsI18nInspection
-      I18n.t('companies').each do |company, details| -%>
-      <div class="card">
-        <div class="front">
-          <div class="front-hero front-hero--<%= company %>">
-            <div class="brand">
-              <%= image_tag "#{company}_front.svg", alt: details[:title], class: 'brand-logo' %>
-              <div class="brand-location">
-                <div class="location">
-              <span class="location-floor">
-                <%= details[:floor] %>
-              </span>
-              <span class="location-suite">
-                <%= details[:suite] %>
-              </span>
+      t('companies').each do |company, details| -%>
+      <div class="card" onclick="flip(this);">
+        <div class="card-front">
+          <div class="front">
+            <div class="front-hero front-hero--<%= company %>">
+              <div class="brand">
+                <%= image_tag "#{company}_front.svg", alt: details[:title], class: 'brand-logo' %>
+                <div class="brand-location">
+                  <div class="location">
+                    <span class="location-floor">
+                      <%= details[:floor] %>
+                    </span>
+                    <span class="location-suite">
+                      <%= details[:suite] %>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="front-body">
+              <div class="instructions">
+                <div class="instructions-brand">
+                  <%= details[:title] %>
+                </div>
+                <div class="instructions-text">
+                  <%= details[:instructions] %>
+                </div>
+                <%= image_tag "#{company}_directions.svg", class: 'instructions-image' %>
+                <div class="instructions-more">
+                  More Info
                 </div>
               </div>
             </div>
           </div>
-          <div class="front-body">
-            <div class="instructions">
-              <div class="instructions-brand">
-                <%= details[:title] %>
+        </div>
+        <div class="card-back">
+          <div class="back back--<%= company %>">
+            <%= image_tag "#{company}_back.svg", alt: details[:title], class: 'back-logo' %>
+            <div class="back-phone">
+              <%= details[:phone] %>
+            </div>
+            <div class="back-website">
+              <%= details[:website] %>
+            </div>
+            <div class="back-location">
+              <div class="location">
+                    <span class="location-floor">
+                      <%= details[:floor] %>
+                    </span>
+                    <span class="location-suite">
+                      <%= details[:suite] %>
+                    </span>
               </div>
-              <div class="instructions-text">
-                <%= details[:instructions] %>
-              </div>
-              <%= image_tag "#{company}_directions.svg", class: 'instructions-image' %>
-              <div class="instructions-more">
-                More Info
-              </div>
+            </div>
+            <div class="back-units">
+              <%- details[:org_units].each do |_, org_unit| -%>
+                  <div class="unit">
+                    <div class="unit-name">
+                      <%= org_unit[:name] %>
+                    </div>
+                    <%- org_unit[:contacts].each do |_, contact| -%>
+                        <div class="unit-contact">
+                          <div class="contact">
+                            <span class="contact-title">
+                              <%= contact[:title] %>
+                            </span>
+                            <span class="contact-fill"></span>
+                            <span class="contact-name">
+                              <%= contact[:name] %>
+                            </span>
+                          </div>
+                        </div>
+                    <%- end -%>
+                  </div>
+              <%- end -%>
+            </div>
+            <div class="back-return">
+              <i class="icon ion-arrow-left-c"></i> <%= t('return') %>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card-back">
       </div>
   <% end %>
 
@@ -47,7 +93,7 @@
             <div class="brand-location">
               <div class="location">
             <span class="location-suite">
-              <%= I18n.t('building.welcome') %>
+              <%= t('building.welcome') %>
             </span>
               </div>
             </div>
@@ -56,10 +102,10 @@
         <div class="front-body">
           <div class="instructions">
             <div class="instructions-brand">
-              <%= I18n.t('building.name') %>
+              <%= t('building.name') %>
             </div>
             <div class="instructions-text">
-              <%= I18n.t('building.description') %>
+              <%= t('building.description') %>
             </div>
           </div>
         </div>
