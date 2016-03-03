@@ -34,6 +34,12 @@ en:
             mark:
               name: Mark Michael
               title: Engineering Manager
+        cf:
+          name: Cloud Foundry
+          contacts:
+            alex:
+              name: Alex Jackson
+              title: Director of Engineering
     galvanize:
       title: Galvanize
       floor: FL 4

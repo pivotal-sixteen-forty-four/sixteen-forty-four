@@ -5,7 +5,7 @@ describe 'cards' do
     visit '/'
   end
 
-  it 'shows instructions for knoll', type: :feature do
+  it 'shows instructions for knoll' do
     within '.card', text: 'Knoll' do
       expect(page).to have_content(I18n.t('companies.knoll.title'))
       expect(page).to have_content(I18n.t('companies.knoll.floor'))
@@ -44,11 +44,40 @@ describe 'cards' do
     end
   end
 
-  it 'shows generic building information' do
-    within '.card', text: 'Welcome' do
-      expect(page).to have_content(I18n.t('building.welcome'))
-      expect(page).to have_content(I18n.t('building.name'))
-      expect(page).to have_content(I18n.t('building.description'))
+  context 'when there is no upcoming event' do
+    it 'shows generic building information' do
+      Event.delete_all
+      start_at = Time.current.advance(hours: -3)
+      ends_at = start_at.advance(hours: 3)
+      Event.create(name: 'Denver.rb', floor: '2', suite: '200', description: 'Denver ruby meetup', starts_at: start_at, ends_at: ends_at)
+
+      visit '/'
+
+      within '.card', text: 'Welcome' do
+        expect(page).to have_content(I18n.t('building.welcome'))
+        expect(page).to have_content(I18n.t('building.name'))
+        expect(page).to have_content(I18n.t('building.description'))
+      end
+    end
+  end
+
+  context 'when there is an event' do
+    it 'shows the event information' do
+      Event.delete_all
+      start_at = Time.current.next_week(:tuesday).advance(hours: 18)
+      ends_at = start_at.advance(hours: 3)
+      Event.create(name: 'Denver.rb', floor: '2', suite: '200', description: 'Denver ruby meetup', starts_at: start_at, ends_at: ends_at)
+
+      visit '/'
+
+      within '.card', text: 'Denver.rb' do
+        expect(page).to have_content('FL 2')
+        expect(page).to have_content('Suite 200')
+        expect(page).to have_content('Denver ruby meetup')
+        expect(page).to have_content(start_at.strftime('%A, %B %e')) # Tuesday, March 11
+        expect(page).to have_content('6:00 PM')
+        expect(page).to have_content('9:00 PM')
+      end
     end
   end
 end

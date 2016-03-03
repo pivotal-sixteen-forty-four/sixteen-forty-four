@@ -1,0 +1,15 @@
+@import 'colors';
+@import 'fonts';
+
+.event {
+
+}
+
+.event-location {
+  margin-top: 36px;
+}
+
+.event-datetime {
+  margin-top: 36px;
+  @include roboto-light;
+}

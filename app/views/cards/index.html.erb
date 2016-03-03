@@ -87,31 +87,69 @@
       </div>
   <% end %>
 
-  <div class="card">
-    <div class="card-front">
-      <div class="front">
-        <div class="front-hero front-hero--event">
-          <div class="brand">
-            <div class="brand-location">
-              <div class="location">
+  <%- if @event.present? -%>
+      <div class="card">
+        <div class="card-front">
+          <div class="front">
+            <div class="front-hero front-hero--event">
+              <div class="brand">
+                <div class="brand-location">
+                  <div class="location">
             <span class="location-suite">
-              <%= t('building.welcome') %>
+              Meetup Event
             </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="front-body">
+              <div class="instructions">
+                <div class="instructions-brand">
+                  <%= @event.name %>
+                </div>
+                <div class="instructions-text">
+                  <div class="event">
+                    <div class="event-description"><%= @event.description %></div>
+                    <div class="event-location">FL <%= @event.floor %> Suite <%= @event.suite %></div>
+                    <div class="event-datetime">
+                      <div><%= @event.starts_at.strftime('%A, %B %-d') %></div>
+                      <div><%= @event.starts_at.strftime('%-I:%M %p') %> &mdash; <%= @event.ends_at.strftime('%-I:%M %p') %></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="front-body">
-          <div class="instructions">
-            <div class="instructions-brand">
-              <%= t('building.name') %>
+      </div>
+  <%- else -%>
+      <div class="card">
+        <div class="card-front">
+          <div class="front">
+            <div class="front-hero front-hero--event">
+              <div class="brand">
+                <div class="brand-location">
+                  <div class="location">
+            <span class="location-suite">
+              <%= t('building.welcome') %>
+            </span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="instructions-text">
-              <%= t('building.description') %>
+            <div class="front-body">
+              <div class="instructions">
+                <div class="instructions-brand">
+                  <%= t('building.name') %>
+                </div>
+                <div class="instructions-text">
+                  <%= t('building.description') %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+  <%- end -%>
+
 </div>
