@@ -18,4 +18,4 @@ deployment:
   production:
     branch: master
     commands:
-      - cf push
+      - cf push $PWS_APP
