@@ -1,0 +1,21 @@
+dependencies:
+  pre:
+    - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+    - sudo dpkg -i cf-cli_amd64.deb
+    - cf -v
+  override:
+    - bundle install: # note ':' here
+        timeout: 180 # fail if command has no output for 3 minutes
+
+test:
+  post:
+    - cf api https://api.run.pivotal.io
+    - cf auth $PWS_USER $PWS_PASSWORD
+    - cf target -o $PWS_USER -s dev
+    - cf a
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - cf push
