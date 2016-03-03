@@ -10,32 +10,40 @@
   min-height: 1000px;
   max-height: 1000px;
   text-align: center;
-  box-shadow: 0 4px 10px $drop-shadow-black;
-
-  .card-front {
-    display: block;
-  }
-  .card-back {
-    display: none;
-  }
+  position: relative;
+  perspective: 1000px;
 }
 
 .card-back {
   width: 100%;
   height: 100%;
   color: $white;
+  margin: 0;
+  display: block;
+  backface-visibility: hidden;
+  position: absolute;
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 10px $drop-shadow-black;
 }
 
 .card-front {
   width: 100%;
   height: 100%;
+  margin: 0;
+  display: block;
+  backface-visibility: hidden;
+  position: absolute;
+  box-shadow: 0 4px 10px $drop-shadow-black;
 }
 
-.card--flipped {
-  .card-front {
-    display: none;
-  }
-  .card-back {
-    display: block;
-  }
+.card-flipper--flipped {
+  transform: rotateY(540deg);
+}
+
+.card-flipper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }

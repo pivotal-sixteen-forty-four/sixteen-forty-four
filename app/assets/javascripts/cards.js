@@ -1,3 +1,3 @@
 function flip(el) {
-    el.classList.toggle("card--flipped");
+    el.classList.toggle("card-flipper--flipped");
 }
