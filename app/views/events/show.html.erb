@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <%= link_to events_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_event_path(@event), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show event</h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @event.name %></dd>
 
-<p>
-  <strong>Floor:</strong>
-  <%= @event.floor %>
-</p>
+  <dt>Floor:</dt>
+  <dd><%= @event.floor %></dd>
 
-<p>
-  <strong>Suite:</strong>
-  <%= @event.suite %>
-</p>
+  <dt>Suite:</dt>
+  <dd><%= @event.suite %></dd>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+  <dt>Description:</dt>
+  <dd><%= @event.description %></dd>
 
-<p>
-  <strong>Starts at:</strong>
-  <%= @event.starts_at %>
-</p>
+  <dt>Starts at:</dt>
+  <dd><%= @event.starts_at %></dd>
 
-<p>
-  <strong>Ends at:</strong>
-  <%= @event.ends_at %>
-</p>
+  <dt>Ends at:</dt>
+  <dd><%= @event.ends_at %></dd>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+</dl>

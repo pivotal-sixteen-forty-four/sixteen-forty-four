@@ -34,7 +34,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'rails_12factor'
 
 gem 'ionicons-rails'
+gem 'jquery-rails'
 gem 'pg'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-generators'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+gem 'record_tag_helper', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
