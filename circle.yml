@@ -18,5 +18,5 @@ deployment:
   production:
     branch: master
     commands:
-      - cf push $PWS_APP -c 'rake db:migrate' -i 1
+      - cf push $PWS_APP -c 'rake db:migrate' -i 1 || 0
       - cf push $PWS_APP
