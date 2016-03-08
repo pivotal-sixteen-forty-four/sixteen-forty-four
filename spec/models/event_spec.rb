@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Event, :type => :model do
+  before do
+    Event.delete_all
+  end
+  
   describe '.current_or_upcoming' do
     context 'with past, future, and current events' do
       it 'returns the current event' do
