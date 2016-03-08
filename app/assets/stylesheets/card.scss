@@ -37,7 +37,7 @@
 }
 
 .card-flipper--flipped {
-  transform: rotateY(540deg);
+  transform: rotateY(180deg);
 }
 
 .card-flipper {
@@ -45,5 +45,5 @@
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
+  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
