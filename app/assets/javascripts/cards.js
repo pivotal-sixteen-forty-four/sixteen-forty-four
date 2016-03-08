@@ -8,5 +8,5 @@ function flip(el) {
             console.log('unflipping');
             el.classList.toggle("card-flipper--flipped");
         }
-    }, 2000);
+    }, 20000);
 }
