@@ -47,3 +47,8 @@
 .card-flipper--flipped {
   transform: rotateY(180deg);
 }
+
+.card-flipper--spin {
+  transform: rotateY(135deg);
+  transition: transform 1s;
+}
