@@ -20,7 +20,7 @@ describe 'cards' do
       expect(page).to have_css('.card-flipper--flipped')
       expect(page).to have_content('Susan Example')
 
-      sleep(19)
+      sleep(14)
       expect(page).to have_css('.card-flipper--flipped')
       sleep(1)
       expect(page).to_not have_css('.card-flipper--flipped')
@@ -40,7 +40,7 @@ describe 'cards' do
       expect(page).to have_css('.card-flipper--flipped')
       expect(page).to have_content('Brian Rose')
 
-      sleep(19)
+      sleep(14)
       expect(page).to have_css('.card-flipper--flipped')
       sleep(1)
       expect(page).to_not have_css('.card-flipper--flipped')
@@ -60,7 +60,7 @@ describe 'cards' do
       expect(page).to have_css('.card-flipper--flipped')
       expect(page).to have_content('Jeff Dean')
 
-      sleep(19)
+      sleep(14)
       expect(page).to have_css('.card-flipper--flipped')
       sleep(1)
       expect(page).to_not have_css('.card-flipper--flipped')
