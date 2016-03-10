@@ -6,6 +6,11 @@ var winkInterval;
 
 function flip(el) {
     el.classList.toggle("card-flipper--flipped");
+    if (el.classList.contains("card-flipper--flipped")) {
+        mixpanel.track("Flip " + el.parentElement.id);
+    } else {
+        mixpanel.track("Unflip " + el.parentElement.id);
+    }
     clearTimeout(flipTimeouts[el.parentElement.id]);
     clearInterval(winkInterval);
     flipTimeouts[el.parentElement.id] = setTimeout(function () {
