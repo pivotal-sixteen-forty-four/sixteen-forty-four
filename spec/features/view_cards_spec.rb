@@ -142,9 +142,9 @@ describe 'cards' do
         expect(page).to_not have_content(start_at.advance(days: 6).strftime('%A, %B %e').upcase)
         expect(page).to_not have_content('denver.ts')
 
-        sleep(13)
+        sleep(10)
         expect(page).to have_css('.card-flipper--flipped')
-        sleep(2)
+        sleep(5)
         expect(page).to_not have_css('.card-flipper--flipped')
       end
     end
