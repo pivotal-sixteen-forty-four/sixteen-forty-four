@@ -101,4 +101,52 @@ describe 'cards' do
       end
     end
   end
+
+  context 'when there are multiple upcoming events' do
+    it 'shows six upcoming events on the back' do
+      start_at = Time.current.next_week(:tuesday).advance(hours: 18)
+      ends_at = start_at.advance(hours: 3)
+      Event.create!(name: 'Denver.rb', floor: '2', suite: '200', description: 'Denver ruby meetup', starts_at: start_at, ends_at: ends_at)
+      Event.create!(name: 'denver.cc', floor: '2', suite: '200', description: 'Denver C++ meetup', starts_at: start_at.advance(days: 1), ends_at: ends_at.advance(days: 1))
+      Event.create!(name: 'denver.py', floor: '2', suite: '200', description: 'Denver Python meetup', starts_at: start_at.advance(days: 2), ends_at: ends_at.advance(days: 2))
+      Event.create!(name: 'denver.go', floor: '2', suite: '200', description: 'Denver GoLang meetup', starts_at: start_at.advance(days: 3), ends_at: ends_at.advance(days: 3))
+      Event.create!(name: 'denver.rs', floor: '2', suite: '200', description: 'Denver Rust meetup', starts_at: start_at.advance(days: 4), ends_at: ends_at.advance(days: 4))
+      Event.create!(name: 'denver.js', floor: '2', suite: '200', description: 'Denver JavaScript meetup', starts_at: start_at.advance(days: 5), ends_at: ends_at.advance(days: 5))
+      Event.create!(name: 'denver.ts', floor: '2', suite: '200', description: 'Denver TypeScript meetup', starts_at: start_at.advance(days: 6), ends_at: ends_at.advance(days: 6))
+
+      visit '/'
+
+      within '.card', text: 'Denver.rb' do
+        page.first('div', text: 'Denver.rb').click
+
+        expect(page).to have_css('.card-flipper--flipped')
+
+        expect(page).to have_content(start_at.strftime('%A, %B %e').upcase)
+        expect(page).to have_content('Denver.rb')
+
+        expect(page).to have_content(start_at.advance(days: 1).strftime('%A, %B %e').upcase)
+        expect(page).to have_content('denver.cc')
+
+        expect(page).to have_content(start_at.advance(days: 2).strftime('%A, %B %e').upcase)
+        expect(page).to have_content('denver.py')
+
+        expect(page).to have_content(start_at.advance(days: 3).strftime('%A, %B %e').upcase)
+        expect(page).to have_content('denver.go')
+
+        expect(page).to have_content(start_at.advance(days: 4).strftime('%A, %B %e').upcase)
+        expect(page).to have_content('denver.rs')
+
+        expect(page).to have_content(start_at.advance(days: 5).strftime('%A, %B %e').upcase)
+        expect(page).to have_content('denver.js')
+
+        expect(page).to_not have_content(start_at.advance(days: 6).strftime('%A, %B %e').upcase)
+        expect(page).to_not have_content('denver.ts')
+
+        sleep(13)
+        expect(page).to have_css('.card-flipper--flipped')
+        sleep(2)
+        expect(page).to_not have_css('.card-flipper--flipped')
+      end
+    end
+  end
 end

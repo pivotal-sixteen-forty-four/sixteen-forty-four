@@ -22,10 +22,16 @@
   background: $galvanize-orange;
 }
 
+.back--event {
+  background: black;
+}
+
 .back-logo {
   flex: 0 0 auto;
   margin-top: 80px;
   height: 75px;
+  @include ubuntu-light;
+  font-size: 48px;
 }
 
 .back-phone {

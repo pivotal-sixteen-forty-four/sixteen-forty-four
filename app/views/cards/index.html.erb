@@ -38,7 +38,7 @@
                   </div>
                   <%= image_tag "#{company}_directions.svg", class: 'instructions-image' %>
                   <div class="instructions-more">
-                    More Info
+                    <%= t('more_info') %>
                   </div>
                 </div>
               </div>
@@ -95,35 +95,65 @@
   <% end %>
 
   <%- if @event.present? -%>
-      <div class="card">
-        <div class="card-front">
-          <div class="front">
-            <div class="front-hero front-hero--event">
-              <div class="brand">
-                <div class="brand-location">
-                  <div class="location">
+      <div class="card" id="card-event">
+        <div class="card-flipper" onclick="flip(this);">
+          <div class="card-front">
+            <div class="front">
+              <div class="front-hero front-hero--event">
+                <div class="brand">
+                  <div class="brand-location">
+                    <div class="location">
             <span class="location-suite">
               <%= t('upcoming_event') %>
             </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="front-body">
+                <div class="instructions">
+                  <div class="instructions-brand">
+                    <%= @event.name %>
+                  </div>
+                  <div class="instructions-text">
+                    <div class="event">
+                      <div class="event-description"><%= @event.description %></div>
+                      <div class="event-location">FL <%= @event.floor %> Suite <%= @event.suite %></div>
+                      <div class="event-datetime">
+                        <div><%= @event.starts_at.strftime('%A, %B %-d') %></div>
+                        <div><%= @event.starts_at.strftime('%-I:%M %p') %> &mdash; <%= @event.ends_at.strftime('%-I:%M %p') %></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="instructions-more instructions-more--event">
+                    <%= t('more_events') %>
+                    <i class="icon ion-calendar"></i>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="front-body">
-              <div class="instructions">
-                <div class="instructions-brand">
-                  <%= @event.name %>
-                </div>
-                <div class="instructions-text">
-                  <div class="event">
-                    <div class="event-description"><%= @event.description %></div>
-                    <div class="event-location">FL <%= @event.floor %> Suite <%= @event.suite %></div>
-                    <div class="event-datetime">
-                      <div><%= @event.starts_at.strftime('%A, %B %-d') %></div>
-                      <div><%= @event.starts_at.strftime('%-I:%M %p') %> &mdash; <%= @event.ends_at.strftime('%-I:%M %p') %></div>
+          </div>
+          <div class="card-back">
+            <div class="back back--event">
+              <div class="back-logo">Future Events</div>
+              <div class="back-events">
+                <div class="events">
+                  <%- @events.each do |date, events| -%>
+                    <div class="events-date">
+                      <%= date.strftime('%A, %B %-d') %>
                     </div>
-                  </div>
+                    <%- events.each do |event| -%>
+                      <div class="futureEvent">
+                        <div class="futureEvent-name"><%= event.name %></div>
+                        <div class="futureEvent-space"></div>
+                        <div class="futureEvent-time"><%= event.starts_at.strftime('%-I:%M %p') %></div>
+                      </div>
+                    <%- end -%>
+                  <%- end -%>
                 </div>
+              </div>
+              <div class="back-return">
+                <i class="icon ion-arrow-left-c"></i> <%= t('return') %>
               </div>
             </div>
           </div>

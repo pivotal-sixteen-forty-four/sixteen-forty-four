@@ -1,0 +1,16 @@
+@import 'colors';
+@import 'fonts';
+
+.events {
+
+}
+
+.events-date {
+  margin-top: 36px;
+  @include roboto-normal;
+  font-size: 25px;
+  line-height: 36px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+

@@ -1,26 +1,28 @@
 @import 'colors';
 @import 'fonts';
 
-.contact {
+.futureEvent {
+  @include roboto-light;
   font-size: 20px;
   line-height: 36px;
   display: flex;
   flex-flow: row nowrap;
-  @include roboto-light;
 }
 
-.contact-title {
-  flex: 0 0 auto;
+.futureEvent-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.contact-fill {
+.futureEvent-space {
+  border-bottom: 2px dotted white;
   flex: 1 1 auto;
-  border-bottom: 2px dotted $white;
   height: 25px;
   margin-left: 2px;
   margin-right: 2px;
 }
 
-.contact-name {
+.futureEvent-time {
   flex: 0 0 auto;
 }
