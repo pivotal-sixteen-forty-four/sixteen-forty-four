@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="105px" height="154px" viewBox="0 0 105 154" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
-    <title>Imported Layers</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="v1" sketch:type="MSArtboardGroup" transform="translate(-679.000000, -142.000000)" fill="#FFFFFF">
-            <g id="Pivotal" sketch:type="MSLayerGroup" transform="translate(510.000000, 44.000000)">
-                <path d="M210.8797,98 L169,98.0081207 L169,251.483741 L194.9956,251.483741 L194.9956,121.173741 L207.9934,121.173741 C211.0336,121.198103 213.8686,121.300966 216.4363,121.355103 C237.6934,121.769259 248.2801,128.282052 248.2801,144.837431 C248.2801,145.506034 248.3179,145.936431 248.3179,146.632103 C248.3179,161.939603 239.9236,172.098586 216.7927,172.098586 C214.5787,172.098586 211.2442,171.616759 211.2442,171.616759 L211.2442,192.844241 C211.2442,192.844241 214.549,192.817172 216.8116,192.817172 C250.0297,192.817172 273.4954,179.729328 273.4954,146.867603 C273.4954,146.207121 273.4495,145.533103 273.4495,144.883448 C273.4495,110.819862 247.921,98 210.8797,98" id="Imported-Layers" sketch:type="MSShapeGroup"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="105" height="154" viewBox="0 0 105 154" xmlns="http://www.w3.org/2000/svg"><title>Imported Layers</title><path d="M41.88 0L0 .008v153.476h25.996V23.174h12.997c3.04.024 5.876.127 8.443.18 21.257.415 31.844 6.928 31.844 23.483 0 .67.038 1.1.038 1.795 0 15.308-8.394 25.467-31.525 25.467-2.214 0-5.55-.483-5.55-.483v21.227s3.306-.027 5.57-.027c33.217 0 56.682-13.088 56.682-45.95 0-.66-.046-1.334-.046-1.984C104.45 12.82 78.92 0 41.88 0" fill="#FFF" fill-rule="evenodd"/></svg>
