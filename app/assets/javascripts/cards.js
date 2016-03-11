@@ -27,7 +27,7 @@ function _wink($card) {
         if ($card.length > 1) {
             _wink(_.tail($card));
         }
-    }, 250)
+    }, 200)
 }
 
 function wink() {
@@ -37,7 +37,7 @@ function wink() {
         setTimeout(function () {
             var $card = $('.card-flipper');
             _wink($card);
-        }, 1000);
+        }, 800);
     }, WINK_INTERVAL_MS);
 }
 

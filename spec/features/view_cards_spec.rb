@@ -87,7 +87,7 @@ describe 'cards' do
     it 'shows the event information' do
       start_at = Time.current.next_week(:tuesday).advance(hours: 18)
       ends_at = start_at.advance(hours: 3)
-      Event.create!(name: 'Denver.rb', floor: '2', suite: '200', description: 'Denver ruby meetup', starts_at: start_at, ends_at: ends_at)
+      Event.create!(name: 'Denver.rb', floor: '2', suite: '200', description: 'Denver ruby meetup', starts_at: start_at, ends_at: ends_at, image_url: '//s3.amazonaws.com/sixteen-forty-four/images/61c68605-2e38-4057-bc87-c64aa7377ac1/ruby.jpg')
 
       visit '/'
 

@@ -3,6 +3,7 @@
 <head><title>SixteenFortyFour</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'cards' %>
   <meta http-equiv="refresh" content="3600">
 </head>
 <body class="body">
@@ -100,7 +101,11 @@
         <div class="card-flipper" onclick="flip(this);">
           <div class="card-front">
             <div class="front">
-              <div class="front-hero front-hero--event">
+              <%- if @event.image_url.present? -%>
+                <div class="front-hero front-hero--event" style="background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8)), url('<%= @event.image_url %>');">
+            <%- else -%>
+                <div class="front-hero front-hero--event">
+              <%- end -%>
                 <div class="brand">
                   <div class="brand-location">
                     <div class="location">

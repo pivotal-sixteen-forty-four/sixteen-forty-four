@@ -19,9 +19,18 @@ en:
       floor: FL 2
       suite: Suite 200
       instructions: Use the video phone to the left of the elevator
-      phone: 303-555-PIVOTAL
+      phone: 303-552-0979
       website: pivotal.io
       org_units:
+        pivotal:
+          name: Pivotal
+          contacts:
+            jen:
+              name: Jennifer Donahue
+              title: Sr. Dir. of Facilities
+            nick:
+              name: Nick Cayou
+              title: VP, Global Alliances
         labs:
           name: Pivotal Labs
           contacts:

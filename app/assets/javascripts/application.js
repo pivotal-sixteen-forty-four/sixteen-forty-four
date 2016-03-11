@@ -17,4 +17,5 @@
 //= require bootstrap-datetimepicker
 //= require lodash
 //= require mixpanel
-//= require_tree .
+//= require jquery-ui
+//= require jquery-fileupload
