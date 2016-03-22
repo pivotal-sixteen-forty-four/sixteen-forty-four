@@ -97,16 +97,22 @@ en:
       title: Galvanize
       floor: FL 4
       suite: Suite 300/400
-      instructions: Call 303-555-1212 to gain elevator access
-      phone: 303-555-GALVANIZE
-      website: galvanize.com
+      instructions: Call 303-749-0110 to gain elevator access
+      phone: 303-749-0110
+      website: galvanize.it
       org_units:
         galvanize:
           name: Galvanize
           contacts:
-            jeff:
-              name: Jeff Dean
-              title: Lorem Ipsum
+            jim:
+              name: Jim Deters
+              title: Founder
+            lawrence:
+              name: Lawrence Mandes
+              title: Founder
+            chris:
+              name: Chris Onan
+              title: Founder
   more-info: More Info
   return: Return
   building:
