@@ -3,9 +3,9 @@
     <div class="card-front">
       <div class="front">
         <%- if event.image_url.present? -%>
-            <div class="front-hero front-hero--event" style="background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8)), url('<%= event.image_url %>');">
+            <div class="front-hero front-hero--event" style="background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8)), url('<%= event.image_url %>'); background-repeat: no-repeat; background-size: contain;">
         <%- else -%>
-            <div class="front-hero front-hero--event">
+            <div class="front-hero front-hero--event" style="background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8)), url('<%= image_url('building') %>'); background-repeat: no-repeat; background-size: cover;">
         <%- end -%>
         <div class="brand">
           <div class="brand-location">
