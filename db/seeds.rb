@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+%w(
+  jdonahue@pivotal.io
+  ttaylor@pivotal.io
+  kcutter@pivotal.io
+  jwilbern@pivotal.io
+  krista@galvanize.com
+).each do |email|
+  Admin.create!(email: email)
+end

@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe 'cards' do
   before do
-    Event.delete_all
     visit '/'
     page.driver.browser.manage.window.resize_to(1920, 1160)
   end
@@ -58,7 +57,7 @@ describe 'cards' do
       page.first('div', text: 'Galvanize').click
 
       expect(page).to have_css('.card-flipper--flipped')
-      expect(page).to have_content('Jeff Dean')
+      expect(page).to have_content('galvanize.it')
 
       sleep(14)
       expect(page).to have_css('.card-flipper--flipped')

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :events
+
+  resources :sessions, only: [:new]
+  get '/auth/:provider/callback', to: 'sessions#create'
   get 'cards/index'
 
   root 'cards#index'

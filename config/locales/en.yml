@@ -121,3 +121,9 @@ en:
     description: The 16th century office
   upcoming_event: "Upcoming Event"
   more_events: "More Events"
+  sessions:
+    new:
+      logged_in: You must be logged in to manage events.
+      google: Login with Google
+      must_be_admin: "You must be an admin to manage events."
+      success: "You've been logged in."
