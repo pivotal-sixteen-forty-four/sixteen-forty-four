@@ -5,15 +5,59 @@ en:
       floor: FL 1
       suite: Suite 100
       instructions: Proceed around the corner and through the doors
-      phone: 303-555-KNOLL
+      phone: 3037221555
       website: knoll.com
       org_units:
         knoll:
           name: Knoll
           contacts:
-            susan:
-              name: Susan Example
-              title: Lorem Ipsum
+            melissa:
+              name: Melissa Regan
+              title: Regional Director
+            scott:
+              name: Scott Thomson
+              title: Sales Rep.
+            samantha:
+              name: Samantha Schwarz
+              title: Sales Rep.
+            veronica:
+              name: Veronica Littleton
+              title: Sales Rep.
+            jenny:
+              name: Jenny West
+              title: A&D Manager
+            susie:
+              name: Susie Richards
+              title: Showroom Manager
+            danika:
+              name: Danika von-Muegge
+              title: KnollTextiles Sales
+    nichols_partnership:
+      title: Nichols Partnership
+      floor: FL 1
+      suite: Suite 100
+      instructions: Proceed around the corner and through the doors
+      phone: 303-291-2200
+      website: nicholspartnership.com
+      org_units:
+        nichols_partnership:
+          name: Nichols Partnership
+          contacts:
+            randy:
+              name: Randy Nichols
+              title: President
+            christopher:
+              name: Christopher Crosby
+              title: Executive VP
+            william:
+              name: William Pruter
+              title: CFO
+            melissa:
+              name: Melissa Rummel
+              title: Project Manager
+            dan:
+              name: Dan Schuetz
+              title: Project Manager
     pivotal:
       title: Pivotal
       floor: FL 2

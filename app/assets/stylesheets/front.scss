@@ -22,6 +22,11 @@
   background-color: $galvanize-orange;
 }
 
+.front-hero--nichols_partnership {
+  background-color: $nichols-grey;
+  padding: 0px 25px;
+}
+
 .front-hero--event {
   background-image: linear-gradient(to bottom, $transparent, $transparent-black), image-url('building.jpg');
   background-size: 100%;
