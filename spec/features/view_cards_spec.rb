@@ -18,7 +18,7 @@ describe 'cards' do
       page.first('div', text: 'Knoll').click
 
       expect(page).to have_css('.card-flipper--flipped')
-      expect(page).to have_content('Susan Example')
+      expect(page).to have_content('knoll.com')
 
       sleep(14)
       expect(page).to have_css('.card-flipper--flipped')
