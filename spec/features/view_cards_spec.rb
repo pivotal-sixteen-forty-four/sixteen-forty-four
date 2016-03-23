@@ -1,9 +1,13 @@
 require 'rails_helper'
 
 describe 'cards' do
-  before do
+  let(:flip_timeout) { AcceptanceHelpers::DEFAULT_FLIP_TIME }
+  around do |example|
     visit '/'
-    page.driver.browser.manage.window.resize_to(1920, 1160)
+    with_flip_timeout(flip_timeout) do
+      page.driver.browser.manage.window.resize_to(1920, 1160)
+      example.run
+    end
   end
 
   it 'shows instructions for knoll' do
@@ -19,9 +23,7 @@ describe 'cards' do
       expect(page).to have_css('.card-flipper--flipped')
       expect(page).to have_content('knoll.com')
 
-      sleep(14)
       expect(page).to have_css('.card-flipper--flipped')
-      sleep(1)
       expect(page).to_not have_css('.card-flipper--flipped')
     end
   end
@@ -39,9 +41,7 @@ describe 'cards' do
       expect(page).to have_css('.card-flipper--flipped')
       expect(page).to have_content('Brian Rose')
 
-      sleep(14)
       expect(page).to have_css('.card-flipper--flipped')
-      sleep(1)
       expect(page).to_not have_css('.card-flipper--flipped')
     end
   end
@@ -59,9 +59,7 @@ describe 'cards' do
       expect(page).to have_css('.card-flipper--flipped')
       expect(page).to have_content('galvanize.it')
 
-      sleep(14)
       expect(page).to have_css('.card-flipper--flipped')
-      sleep(1)
       expect(page).to_not have_css('.card-flipper--flipped')
     end
   end
@@ -115,11 +113,11 @@ describe 'cards' do
 
       visit '/'
 
-      within '.card', text: 'Denver.rb' do
+      within_event_card do
         page.first('div', text: 'Denver.rb').click
+      end
 
-        expect(page).to have_css('.card-flipper--flipped')
-
+      within_event_card(:back) do
         expect(page).to have_content(start_at.strftime('%A, %B %e').upcase)
         expect(page).to have_content('Denver.rb')
 
@@ -140,12 +138,29 @@ describe 'cards' do
 
         expect(page).to_not have_content(start_at.advance(days: 6).strftime('%A, %B %e').upcase)
         expect(page).to_not have_content('denver.ts')
-
-        sleep(10)
-        expect(page).to have_css('.card-flipper--flipped')
-        sleep(5)
-        expect(page).to_not have_css('.card-flipper--flipped')
       end
+    end
+  end
+
+  context 'when there are multiple upcoming events TODAY' do
+    it 'rotates through them on the front' do
+      start_at = Date.today.middle_of_day
+      ends_at = start_at.advance(days: 0.75)
+      Event.create!(name: 'Denver.rb', floor: '2', suite: '200', description: 'Denver Ruby meetup', starts_at: start_at, ends_at: ends_at)
+      Event.create!(name: 'Denver.go', floor: '2', suite: '200', description: 'Denver GoLang meetup', starts_at: start_at.advance(minutes: 20), ends_at: ends_at.advance(minutes: 20))
+
+      visit '/'
+
+      within_event_card(:front) do
+        expect(page).to have_content 'Denver.rb'
+        expect(page).to have_css '.carousel-inner .item', text: 'Denver.go', visible: false # the carousel does not boot in this test, for some reason...
+      end
+    end
+  end
+
+  def within_event_card(side=:front)
+    within "#card-event .#{side}" do
+      yield
     end
   end
 end

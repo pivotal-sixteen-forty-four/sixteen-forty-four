@@ -27,6 +27,8 @@ ActiveRecord::Migration.maintain_test_schema!
 
 Capybara.default_driver = :selenium
 OmniAuth.config.test_mode = true
+Rails.logger = Logger.new(Rails.root.join('log/test.log'))
+ActiveRecord::Base.logger = Rails.logger
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each {|f| require f }
 
@@ -38,6 +40,7 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include AcceptanceHelpers
+  config.include OmniauthHelpers
 
   config.before(:each) do
     Event.delete_all

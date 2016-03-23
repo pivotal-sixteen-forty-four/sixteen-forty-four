@@ -49,6 +49,9 @@
 
 .card-flipper--flipped {
   transform: rotateY(180deg);
+  .card-back {
+    z-index: 2;
+  }
 }
 
 .card-flipper--spin {
