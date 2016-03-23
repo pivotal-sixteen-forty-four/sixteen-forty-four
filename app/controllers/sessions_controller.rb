@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if @admin
       session[:user_id] = @admin.id
       flash[:error] = t('sessions.new.success')
-      redirect_to events_path
+      redirect_back fallback_location: events_path
     else
       redirect_to new_session_path, notice: t('sessions.new.must_be_admin')
     end

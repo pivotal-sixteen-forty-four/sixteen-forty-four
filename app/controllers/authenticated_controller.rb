@@ -10,7 +10,7 @@ class AuthenticatedController < ApplicationController
   end
 
   def current_user
-    @admin ||= Admin.find_by(id: session[:user_id]) || GuestUser.new
+    @current_user ||= Admin.find_by(id: session[:user_id]) || GuestUser.new
   end
 
   class GuestUser

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :events
 
   resources :sessions, only: [:new]
+  resources :admins, only: [:index, :new, :create, :destroy]
   get '/auth/:provider/callback', to: 'sessions#create'
   get 'cards/index'
 
