@@ -63,13 +63,12 @@
 <% end %>
 
 <script>
-  $('.datetimepicker').datetimepicker({
-    sideBySide: true,
-    minDate: moment(),
-    stepping: 15
-  });
-
   $(function () {
+    $('.datetimepicker').datetimepicker({
+      sideBySide: true,
+      minDate: moment(),
+      keepInvalid: true
+    });
     $('form').find("input:file").each(function (i, elem) {
       var fileInput = $(elem);
       var form = $(fileInput.parents('form:first'));
