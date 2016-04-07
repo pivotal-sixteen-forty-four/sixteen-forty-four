@@ -3,7 +3,7 @@ en:
     knoll:
       title: Knoll
       floor: FL 1
-      suite: Suite 100
+      suite: Suite 120
       instructions: Proceed around the corner and through the doors
       phone: 303-722-1555
       website: knoll.com
@@ -35,7 +35,7 @@ en:
     nichols_partnership:
       title: Nichols Partnership
       floor: FL 1
-      suite: Suite 100
+      suite: Suite 130
       instructions: Proceed around the corner and through the doors
       phone: 303-291-2200
       website: nicholspartnership.com
@@ -58,6 +58,12 @@ en:
             dan:
               name: Dan Schuetz
               title: Project Manager
+            barb:
+              name: Barb Smith
+              title: Office Manager
+            lori:
+              name: Lori McLaren
+              title: Bookkeeper
     pivotal:
       title: Pivotal
       floor: FL 2
