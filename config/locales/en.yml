@@ -29,6 +29,9 @@ en:
             susie:
               name: Susie Richards
               title: Showroom Manager
+            ann:
+              name: Ann Jimenez
+              title: KnollStudio Sales
             danika:
               name: Danika von-Muegge
               title: KnollTextiles Sales
@@ -103,7 +106,7 @@ en:
       title: Galvanize
       floor: FL 4
       suite: Suite 300/400
-      instructions: Call 303-749-0110 to gain elevator access
+      instructions: Please proceed to 4th floor.
       phone: 303-749-0110
       website: galvanize.it
       org_units:

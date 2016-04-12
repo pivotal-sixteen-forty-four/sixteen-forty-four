@@ -11,6 +11,7 @@
   kcutter@pivotal.io
   jwilbern@pivotal.io
   krista@galvanize.com
+  alwelch@pivotal.io
 ).each do |email|
   Admin.create!(email: email)
 end
