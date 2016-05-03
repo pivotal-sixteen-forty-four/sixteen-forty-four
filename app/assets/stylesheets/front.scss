@@ -25,6 +25,9 @@
 .front-hero--nichols_partnership {
   background-color: $nichols-grey;
   padding: 0px 25px;
+  .brand img {
+    width: 300px;
+  }
 }
 
 .front-hero--event {
