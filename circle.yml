@@ -11,7 +11,7 @@ test:
   post:
     - cf api https://api.run.pez.pivotal.io
     - cf auth $PWS_USER $PWS_PASSWORD
-    - cf target -o $PWS_ORG -s development
+    - cf target -o $PWS_ORG -s $PWS_SPACE
     - cf a
 
 deployment:
