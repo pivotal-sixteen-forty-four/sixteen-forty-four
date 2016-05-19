@@ -13,5 +13,5 @@
   krista@galvanize.com
   alwelch@pivotal.io
 ).each do |email|
-  Admin.create!(email: email)
+  Admin.find_or_create_by(email: email)
 end
