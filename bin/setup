@@ -29,10 +29,10 @@ chdir APP_ROOT do
   # Add necessary setup steps to this file.
 
   puts '== Installing dependencies =='
-  system! 'brew install postgresql'
+  system! 'brew install mysql'
 
-  if !system('pgrep -lf postgresql >/dev/null 2>&1')
-    say('Follow instructions above in another window to start postgresql')
+  if !system('pgrep -lf mysql >/dev/null 2>&1')
+    say('Follow instructions above in another window to start mysql')
     say('Then press enter')
     gets
   end

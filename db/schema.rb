@@ -13,10 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160323150952) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "admins", force: :cascade do |t|
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
     t.string   "uid"
     t.string   "provider"
@@ -28,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160323150952) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
 
-  create_table "events", force: :cascade do |t|
+  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "floor"
     t.string   "suite"

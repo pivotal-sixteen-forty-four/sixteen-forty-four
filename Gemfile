@@ -4,8 +4,6 @@ ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.beta3', '< 5.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
@@ -35,7 +33,7 @@ gem 'rails_12factor'
 
 gem 'ionicons-rails'
 gem 'jquery-rails'
-gem 'pg'
+gem 'mysql2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-generators'
 gem 'momentjs-rails', '>= 2.9.0'
