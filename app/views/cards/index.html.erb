@@ -1,4 +1,4 @@
 <%= render partial: 'company', collection: @companies %>
 <%= render_or_else partial: 'event', locals: {todays_events: @todays_events, events: @events}, if: -> { @todays_events.present? } do %>
-    <%= render partial: 'no_event' %>
+
 <% end %>

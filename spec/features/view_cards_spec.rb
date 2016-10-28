@@ -64,22 +64,6 @@ describe 'cards' do
     end
   end
 
-  context 'when there is no upcoming event' do
-    it 'shows generic building information' do
-      start_at = Time.current.advance(hours: -3)
-      ends_at = start_at.advance(hours: -2)
-      Event.create(name: 'Denver.rb', floor: '2', suite: '200', description: 'Denver ruby meetup', starts_at: start_at, ends_at: ends_at)
-
-      visit '/'
-
-      within '.card', text: 'Welcome' do
-        expect(page).to have_content(I18n.t('building.welcome'))
-        expect(page).to have_content(I18n.t('building.name'))
-        expect(page).to have_content(I18n.t('building.description'))
-      end
-    end
-  end
-
   context 'when there is an event' do
     it 'shows the event information' do
       start_at = Time.current.next_week(:tuesday).advance(hours: 18)
