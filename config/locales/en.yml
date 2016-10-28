@@ -71,7 +71,7 @@ en:
       title: Pivotal
       floor: FL 2
       suite: Suite 200
-      instructions: Use the video phone to the left of the elevator
+      instructions: Please proceed to the 2nd floor
       phone: 303-552-0979
       website: pivotal.io
       org_units:
@@ -106,7 +106,7 @@ en:
       title: Galvanize
       floor: FL 4
       suite: Suite 300/400
-      instructions: Please proceed to 4th floor.
+      instructions: Please proceed to 4th floor
       phone: 303-749-0110
       website: galvanize.it
       org_units:
