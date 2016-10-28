@@ -23,7 +23,7 @@ function flip(el) {
 
 function _wink($card) {
     setTimeout(function () {
-        _.first($card).classList.toggle("card-flipper--spin");
+        _.first($card).classList.toggle("card-flipper--flipped");
         if ($card.length > 1) {
             _wink(_.tail($card));
         }
@@ -37,7 +37,7 @@ function wink() {
         setTimeout(function () {
             var $card = $('.card-flipper');
             _wink($card);
-        }, 800);
+        }, $card.length * 250);
     }, WINK_INTERVAL_MS);
 }
 
