@@ -5,6 +5,7 @@ A kiosk intended to be used on a touch screen that manages events for the 1644 P
 ## Dev setup
 
 ```bash
+source .env.example # to set env vars (or copy to .env and then change as needed)
 bin/setup # install deps and create DB
 bin/rake # run tests
 ```
