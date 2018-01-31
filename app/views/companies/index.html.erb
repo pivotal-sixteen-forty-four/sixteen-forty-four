@@ -1,0 +1,39 @@
+<div class="page-header">
+  <%= link_to new_company_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Company
+  <% end %>
+  <h1>Listing companies</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Name</th>
+            <th>Floor</th>
+            <th>Suite</th>
+            <th>Instructions</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @companies) do |company| %>
+            <td><%= company.title %></td>
+            <td><%= company.floor %></td>
+            <td><%= company.suite %></td>
+            <td><%= company.instructions %></td>
+            <td><%= company.phone %></td>
+            <td><%= company.website %></td>
+            <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

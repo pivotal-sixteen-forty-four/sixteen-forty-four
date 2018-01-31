@@ -1,10 +1,10 @@
-<div class="card" id="card-<%= company.name %>">
+<div class="card" id="card-<%= company.key %>">
   <div class="card-flipper" onclick="flip(this);">
     <div class="card-front">
       <div class="front">
-        <div class="front-hero front-hero--<%= company.name %>">
+        <div class="front-hero front-hero--<%= company.key %>">
           <div class="brand">
-            <%= image_tag "#{company.name}_front.svg", alt: company.title, class: 'brand-logo' %>
+            <%= image_tag "#{company.key}_front.svg", alt: company.title, class: 'brand-logo' %>
             <div class="brand-location">
               <div class="location">
                     <span class="location-floor">
@@ -25,7 +25,7 @@
             <div class="instructions-text">
               <%= company.instructions %>
             </div>
-            <%= image_tag "#{company.name}_directions.svg", class: 'instructions-image' %>
+            <%= image_tag "#{company.key}_directions.svg", class: 'instructions-image' %>
             <div class="instructions-more">
               <%= t('more_info') %>
             </div>
@@ -34,8 +34,8 @@
       </div>
     </div>
     <div class="card-back">
-      <div class="back back--<%= company.name %>">
-        <%= image_tag "#{company.name}_back.svg", alt: company.title, class: 'back-logo' %>
+      <div class="back back--<%= company.key %>">
+        <%= image_tag "#{company.key}_back.svg", alt: company.title, class: 'back-logo' %>
         <div class="back-phone">
           <%= company.phone %>
         </div>
@@ -53,20 +53,20 @@
           </div>
         </div>
         <div class="back-units">
-          <%- company.org_units.each do |_, org_unit| -%>
+          <%- company.org_units.each do |org_unit| -%>
               <div class="unit">
                 <div class="unit-name">
-                  <%= org_unit[:name] %>
+                  <%= org_unit.name %>
                 </div>
-                <%- org_unit[:contacts].each do |_, contact| -%>
+                <%- org_unit.employees.each do |contact| -%>
                     <div class="unit-contact">
                       <div class="contact">
                             <span class="contact-title">
-                              <%= contact[:title] %>
+                              <%= contact.title %>
                             </span>
                         <span class="contact-fill"></span>
                             <span class="contact-name">
-                              <%= contact[:name] %>
+                              <%= contact.name %>
                             </span>
                       </div>
                     </div>

@@ -15,3 +15,6 @@
 ).each do |email|
   Admin.find_or_create_by(email: email)
 end
+
+require_relative './companies_loader'
+CompaniesLoader.new.load!

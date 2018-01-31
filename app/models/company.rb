@@ -1,10 +1,11 @@
-class Company
-  include ActiveModel::Model
-  attr_accessor :name, :details, :title, :suite, :floor, :instructions, :phone, :website, :org_units
+class Company < ActiveRecord::Base
+  include Keyable
 
-  def self.all
-    I18n.t('companies').map do |name, details|
-      new(**details.merge(name: name))
-    end
+  has_many :org_units
+  accepts_nested_attributes_for :org_units, allow_destroy: true
+  validates :title, :title, :suite, :floor, :instructions, :phone, :website, presence: true
+
+  def key_attr
+    :title
   end
 end

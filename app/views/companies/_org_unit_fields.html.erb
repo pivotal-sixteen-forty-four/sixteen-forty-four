@@ -1,0 +1,19 @@
+<div class="form-group">
+  <div class="row">
+    <%= f.label :name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <%= f.link_to_remove "Remove", class: 'col-sm-4' %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p><%= f.link_to_add "Add Employee", :employees, data: {target: "#employees-#{f.object.id}"} if f.object.persisted? %></p>
+    </div>
+  </div>
+
+  <div class="row" id="employees-<%= f.object.id %>">
+    <%= f.fields_for :employees %>
+  </div>
+</div>

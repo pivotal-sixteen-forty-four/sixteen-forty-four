@@ -9,10 +9,8 @@ module AcceptanceHelpers
   end
 
   def with_flip_timeout(timeout_in_seconds, &block)
-    page.evaluate_script('(function() { return window.UNFLIP_TIMEOUT_MS; })()')
-    page.execute_script("UNFLIP_TIMEOUT_MS = #{timeout_in_seconds * 1000};")
+    page.execute_script('try { (function() { return window.UNFLIP_TIMEOUT_MS; })() } catch(e) { }')
+    page.execute_script("try { window.UNFLIP_TIMEOUT_MS = #{timeout_in_seconds * 1000};} catch(e) { }")
     block.call
-  ensure
-    page.execute_script("UNFLIP_TIMEOUT_MS = #{DEFAULT_FLIP_TIME};")
   end
 end

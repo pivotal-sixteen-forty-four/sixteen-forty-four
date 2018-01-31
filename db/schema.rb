@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323150952) do
+ActiveRecord::Schema.define(version: 20180131180414) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
@@ -21,6 +21,28 @@ ActiveRecord::Schema.define(version: 20160323150952) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  end
+
+  create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "key"
+    t.string   "title"
+    t.string   "floor"
+    t.string   "suite"
+    t.string   "instructions"
+    t.string   "phone"
+    t.string   "website"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "key"
+    t.string   "name"
+    t.string   "title"
+    t.integer  "org_unit_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["org_unit_id"], name: "index_employees_on_org_unit_id", using: :btree
   end
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -35,4 +57,14 @@ ActiveRecord::Schema.define(version: 20160323150952) do
     t.string   "image_url"
   end
 
+  create_table "org_units", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "key"
+    t.string   "name"
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_org_units_on_company_id", using: :btree
+  end
+
+  add_foreign_key "employees", "org_units"
 end
