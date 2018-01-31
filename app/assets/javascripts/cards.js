@@ -1,5 +1,5 @@
-var UNFLIP_TIMEOUT_MS = 15000;
-var WINK_INTERVAL_MS = 20000;
+window.UNFLIP_TIMEOUT_MS = 15000;
+window.WINK_INTERVAL_MS = 20000;
 
 var flipTimeouts = {};
 var winkInterval;

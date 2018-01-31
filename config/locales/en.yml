@@ -11,21 +11,27 @@ en:
         knoll:
           name: Knoll
           contacts:
+            mike:
+              name: Mike Benigno
+              title: VP Sales, Western Division
             melissa:
               name: Melissa Regan
               title: Regional Director
-            scott:
-              name: Scott Thomson
-              title: Sales Rep.
+            maren:
+              name: Maren Kirlin
+              title: Sales Rep
             samantha:
               name: Samantha Schwarz
               title: Sales Rep.
+            scott:
+              name: Scott Thomson
+              title: Sales Rep.
             veronica:
               name: Veronica Littleton
-              title: Sales Rep.
+              title: A&D Manager
             jenny:
               name: Jenny West
-              title: A&D Manager
+              title: Transformational Leadership
             susie:
               name: Susie Richards
               title: Showroom Manager
